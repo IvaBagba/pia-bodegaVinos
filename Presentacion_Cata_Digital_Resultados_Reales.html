@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Proyecto Cata Digital | Celler del Túria</title>
+<style>
+:root{--bg:#0b1110;--panel:#121d19;--panel2:#182721;--line:#2a4037;--text:#f2f5ef;--muted:#a9b8ae;--gold:#d7b56d;--green:#82b79a;--red:#df887c;--blue:#83aeca;--radius:20px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,#20382c 0,transparent 35%),var(--bg);color:var(--text);font:16px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}
+button{font:inherit}.top{position:fixed;z-index:10;top:0;left:0;right:0;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 4vw;background:#0b1110df;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff12}.brand{font-weight:750;letter-spacing:.04em}.brand span{color:var(--gold)}.top small{color:var(--muted)}.progress{height:3px;position:fixed;top:64px;left:0;z-index:11;background:var(--gold);width:0;transition:width .2s}
+nav{position:fixed;z-index:9;top:50%;right:18px;transform:translateY(-50%);display:grid;gap:10px}nav a{width:9px;height:9px;border-radius:50%;background:#617168;display:block;border:1px solid #9eafa4}nav a.active{background:var(--gold);transform:scale(1.5)}
+main{max-width:1180px;margin:auto;padding:95px 34px 70px}section{min-height:78vh;padding:42px 0 70px;display:flex;flex-direction:column;justify-content:center;border-bottom:1px solid #ffffff12;scroll-margin-top:80px}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.17em;font-size:.76rem;font-weight:800}.hero{min-height:86vh}.hero h1{font-size:clamp(3rem,8vw,6.7rem);line-height:.98;letter-spacing:-.065em;max-width:950px;margin:24px 0}.hero h1 em{font-style:normal;color:var(--gold)}.lead{font-size:clamp(1.1rem,2vw,1.45rem);color:#c7d2ca;max-width:760px}.herofoot{display:flex;gap:12px;flex-wrap:wrap;margin-top:35px}.pill{border:1px solid var(--line);background:#14221b;padding:10px 15px;border-radius:999px;color:#dce6dc}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}.grid.two{grid-template-columns:repeat(2,1fr)}.grid.four{grid-template-columns:repeat(4,1fr)}.card{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:var(--radius);padding:23px;box-shadow:0 14px 40px #0002}.card h3{margin:0 0 8px;font-size:1.05rem}.card p{color:var(--muted);margin:5px 0}.metric{font-size:clamp(2rem,4vw,3.3rem);font-weight:850;letter-spacing:-.06em;color:var(--gold);line-height:1.1}.metric.green{color:var(--green)}.metric.red{color:var(--red)}h2{font-size:clamp(2.2rem,5vw,4rem);line-height:1.04;letter-spacing:-.045em;margin:13px 0 15px}.sub{color:var(--muted);max-width:800px;font-size:1.08rem}.barrow{display:grid;grid-template-columns:190px 1fr 65px;gap:14px;align-items:center;margin:16px 0}.barlabel{color:#dbe5dc}.bar{height:13px;background:#26362e;border-radius:99px;overflow:hidden}.bar i{display:block;height:100%;border-radius:99px;background:var(--gold)}.bar i.green{background:var(--green)}.bar i.red{background:var(--red)}.bar i.blue{background:var(--blue)}.note{border-left:3px solid var(--gold);padding:13px 17px;background:#d7b56d12;color:#dce5dc;border-radius:0 12px 12px 0;margin:20px 0}.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;margin-top:20px}table{border-collapse:collapse;width:100%;min-width:650px;background:#101a15}th,td{padding:14px 16px;text-align:right;border-bottom:1px solid #ffffff12}th:first-child,td:first-child{text-align:left}th{color:var(--gold);font-size:.85rem;text-transform:uppercase;letter-spacing:.06em}tr:last-child td{border:0}.best{background:#82b79a13}.best td:first-child:after{content:"  ★";color:var(--gold)}.tag{display:inline-block;padding:5px 9px;border-radius:99px;font-size:.78rem;font-weight:750;background:#82b79a1b;color:var(--green)}.tag.warn{background:#d7b56d1b;color:var(--gold)}.tag.risk{background:#df887c1b;color:var(--red)}.matrix{display:grid;grid-template-columns:repeat(2,1fr);gap:5px;max-width:330px}.matrix div{padding:20px;text-align:center;border-radius:10px;background:#1b3026}.matrix div:nth-child(2),.matrix div:nth-child(3){background:#3a2925}.matrix strong{display:block;font-size:1.7rem}.matrix small{color:#c0ccc3}.modelrow{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}.modelrow .card{height:100%}.selector{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.selector button,.navbtn{border:1px solid var(--line);border-radius:999px;padding:9px 15px;background:#14221b;color:var(--text);cursor:pointer}.selector button.active,.navbtn.primary{background:var(--gold);color:#1a1c16;border-color:var(--gold);font-weight:800}.detail{display:none}.detail.active{display:block;animation:fade .25s ease}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}.calc{display:grid;grid-template-columns:1fr 1fr;gap:22px}.calc label{display:block;color:var(--muted);margin:13px 0 6px}.calc input{width:100%;accent-color:var(--gold)}.calc output{font-size:1.8rem;font-weight:800;color:var(--gold)}.footer{color:var(--muted);font-size:.88rem}.controls{display:flex;justify-content:space-between;align-items:center;margin-top:28px}.controls button{cursor:pointer}.source{font-size:.88rem;color:var(--muted)}.kbd{color:var(--muted);font-size:.8rem}
+@media(max-width:760px){main{padding:85px 18px 40px}nav{display:none}.grid,.grid.two,.grid.four,.modelrow,.calc{grid-template-columns:1fr}.barrow{grid-template-columns:125px 1fr 48px;gap:8px}.top small{display:none}section{min-height:auto;padding:55px 0}.hero{min-height:80vh}.metric{font-size:2.5rem}}
+@media print{.top,nav,.progress,.controls{display:none}main{padding:0}section{min-height:auto;page-break-after:always;padding:30px}.card{break-inside:avoid}body{background:#fff;color:#111}.sub,.card p,.source{color:#444}}
+</style>
+</head>
+<body>
+<header class="top"><div class="brand">CATA <span>DIGITAL</span></div><small>IES Abastos · UD2 · Presentación ejecutiva</small><div class="kbd">← → para navegar</div></header>
+<div class="progress" id="progress"></div>
+<nav id="dots" aria-label="Navegación"></nav>
+<main>
+<section class="hero" id="s0">
+<div class="eyebrow">Proyecto integrador · Celler del Túria</div>
+<h1>De la cata<br>al <em>dato.</em></h1>
+<p class="lead">¿Pueden las 11 medidas del laboratorio anticipar qué vinos merecen la etiqueta Selección, acelerar las decisiones y proteger la reputación de la bodega?</p>
+<div class="herofoot"><span class="pill">1.599 vinos analizados</span><span class="pill">3 modelos comparados</span><span class="pill">1.600 lotes/año estimados</span></div>
+
+</section>
+
+<section id="s1">
+<div class="eyebrow">01 · El reto empresarial</div><h2>La decisión llega tarde.<br>El laboratorio, no.</h2>
+<p class="sub">El panel de cata es fiable, pero solo está disponible dos días por semana. El laboratorio obtiene las 11 medidas fisicoquímicas el mismo día.</p>
+<div class="grid four">
+<div class="card"><div class="metric">1.600</div><p>lotes de vino tinto al año</p></div>
+<div class="card"><div class="metric">2 días</div><p>por semana de disponibilidad del panel</p></div>
+<div class="card"><div class="metric">+40%</div><p>precio de venta de un vino Selección</p></div>
+<div class="card"><div class="metric">11</div><p>variables de laboratorio disponibles</p></div>
+</div>
+<div class="grid two">
+<div class="card"><span class="tag risk">Error más caro</span><h3>Falso positivo</h3><div class="metric red">2.500 €</div><p>Un vino mediocre se etiqueta como Selección: puede dañar la marca y provocar devoluciones.</p></div>
+<div class="card"><span class="tag warn">Error menos caro</span><h3>Falso negativo</h3><div class="metric">1.200 €</div><p>Un buen vino no recibe la etiqueta y se pierde el sobreprecio potencial del lote.</p></div>
+</div>
+</section>
+
+<section id="s2">
+<div class="eyebrow">02 · Datos y exploración</div><h2>La clase Selección<br>es minoritaria.</h2>
+<p class="sub">El conjunto Wine Quality (vino tinto) contiene 1.599 registros, 11 medidas y una nota sensorial. Definimos Selección como calidad ≥ 7.</p>
+<div class="grid two">
+<div class="card"><div class="metric">1.599</div><p>registros · 11 variables de entrada · 0 valores ausentes</p><div class="note">Se detectaron 240 filas duplicadas. El notebook las identifica, pero no las elimina; por tanto, el análisis conserva los 1.599 registros originales.</div></div>
+<div class="card"><h3>Distribución de clases</h3><div class="barrow"><span class="barlabel">Normal · 1.382</span><div class="bar"><i class="green" style="width:86.43%"></i></div><b>86,43%</b></div><div class="barrow"><span class="barlabel">Selección · 217</span><div class="bar"><i style="width:13.57%"></i></div><b>13,57%</b></div><p>Un clasificador que siempre diga «Normal» ya acertaría alrededor del 86 %. Por eso accuracy no basta.</p></div>
+</div>
+<h3 style="margin-top:32px">Diferencias de medias más destacadas</h3>
+<p class="sub">Valores de Selección menos valores de Normal, según el análisis exploratorio.</p>
+<div class="card">
+<div class="barrow"><span class="barlabel">SO₂ total</span><div class="bar"><i class="blue" style="width:100%"></i></div><b>−13,396</b></div>
+<div class="barrow"><span class="barlabel">Alcohol</span><div class="bar"><i class="green" style="width:9.46%"></i></div><b>+1,267</b></div>
+<div class="barrow"><span class="barlabel">Acidez fija</span><div class="bar"><i style="width:4.55%"></i></div><b>+0,610</b></div>
+<div class="barrow"><span class="barlabel">SO₂ libre</span><div class="bar"><i class="red" style="width:16.35%"></i></div><b>−2,191</b></div>
+</div>
+<div class="note">Las medias muestran asociaciones, no causalidad. También se inspeccionaron valores atípicos mediante diagramas de caja; no se eliminaron automáticamente.</div>
+</section>
+
+<section id="s3">
+<div class="eyebrow">03 · Comparación justa</div><h2>Mismos datos.<br>Tres generaciones.</h2>
+<div class="grid three">
+<div class="card"><span class="tag">Modelo 1 · 1943</span><h3>Neurona M-P</h3><p>Entradas binarias: cada variable se transforma usando la mediana calculada en entrenamiento.</p><p><b>Limitación:</b> pierde la distancia exacta entre valores.</p></div>
+<div class="card"><span class="tag">Modelo 2 · 1958</span><h3>Perceptrón</h3><p>Trabaja con medidas reales escaladas. Los coeficientes permiten interpretar el peso de cada variable.</p><p><b>Limitación:</b> frontera lineal.</p></div>
+<div class="card"><span class="tag">Modelo 3</span><h3>Perceptrón multicapa</h3><p>Prueba tres arquitecturas: (16), (32,16) y (64,32).</p><p><b>Control:</b> regularización L2 y parada temprana.</p></div>
+</div>
+<div class="card" style="margin-top:18px">
+<h3>Protocolo de evaluación</h3><div class="grid four">
+<div><div class="metric">80/20</div><p>entrenamiento / prueba</p></div>
+<div><div class="metric">42</div><p>semilla aleatoria</p></div>
+<div><div class="metric">1.279</div><p>registros de entrenamiento</p></div>
+<div><div class="metric">320</div><p>registros de prueba</p></div>
+</div>
+<p class="source">Partición estratificada. El escalado y los puntos de corte se ajustan solo con entrenamiento. El test queda reservado para la comparación final.</p>
+</div>
+</section>
+
+<section id="s4">
+<div class="eyebrow">04 · Resultados del test</div><h2>El mejor accuracy<br>no cuenta toda la historia.</h2>
+<p class="sub">Resultados obtenidos al ejecutar el notebook adjunto sobre los 320 registros de prueba.</p>
+<div class="tablewrap"><table><thead><tr><th>Modelo</th><th>Accuracy</th><th>Precisión Selección</th><th>Recall Selección</th><th>F1 Selección</th></tr></thead><tbody>
+<tr><td>Neurona M-P</td><td>86,6%</td><td>50,0%</td><td>4,7%</td><td>0,085</td></tr>
+<tr><td>Perceptrón</td><td>79,4%</td><td>37,1%</td><td>76,7%</td><td>0,500</td></tr>
+<tr class="best"><td>Perceptrón multicapa</td><td>90,3%</td><td>80,0%</td><td>37,2%</td><td>0,508</td></tr>
+</tbody></table></div>
+<div class="grid three">
+<div class="card"><h3>Neurona M-P</h3><div class="metric">2/43</div><p>Solo detecta 2 de los 43 vinos Selección del test.</p><span class="tag risk">Recall muy bajo</span></div>
+<div class="card"><h3>Perceptrón</h3><div class="metric">33/43</div><p>Detecta muchos vinos Selección, pero genera 56 falsos positivos.</p><span class="tag warn">Muchos falsos positivos</span></div>
+<div class="card"><h3>MLP</h3><div class="metric green">80%</div><p>Precisión: 16 de sus 20 predicciones Selección son correctas.</p><span class="tag">Mejor equilibrio observado</span></div>
+</div>
+<div class="note">El MLP obtiene el mayor accuracy (90,3 %) y la mayor precisión (80 %). Su recall es 37,2 %: detecta 16 de los 43 vinos Selección del test y deja escapar 27.</div>
+</section>
+
+<section id="s5">
+<div class="eyebrow">05 · Matrices de confusión</div><h2>¿Qué errores comete<br>cada modelo?</h2>
+<p class="sub">TN = Normal bien clasificado · FP = Normal etiquetado por error · FN = Selección que no se detecta · TP = Selección detectado.</p>
+<div class="selector" id="matrixTabs">
+<button class="active" data-target="m0">Neurona M-P</button><button data-target="m1">Perceptrón</button><button data-target="m2">MLP</button>
+</div>
+<div class="detail active" id="m0"><div class="modelrow"><div class="card"><h3>Neurona M-P</h3><div class="matrix"><div><strong>275</strong><small>TN</small></div><div><strong>2</strong><small>FP</small></div><div><strong>41</strong><small>FN</small></div><div><strong>2</strong><small>TP</small></div></div></div><div><div class="metric">2</div><p>falsos positivos en el test: pocos errores caros, pero solo identifica 2 vinos Selección.</p></div></div></div>
+<div class="detail" id="m1"><div class="modelrow"><div class="card"><h3>Perceptrón</h3><div class="matrix"><div><strong>221</strong><small>TN</small></div><div><strong>56</strong><small>FP</small></div><div><strong>10</strong><small>FN</small></div><div><strong>33</strong><small>TP</small></div></div></div><div><div class="metric red">56</div><p>falsos positivos en el test: el error más costoso se dispara.</p></div></div></div>
+<div class="detail" id="m2"><div class="modelrow"><div class="card"><h3>Perceptrón multicapa</h3><div class="matrix"><div><strong>273</strong><small>TN</small></div><div><strong>4</strong><small>FP</small></div><div><strong>27</strong><small>FN</small></div><div><strong>16</strong><small>TP</small></div></div></div><div><div class="metric green">4</div><p>falsos positivos en el test, frente a 16 aciertos en vinos Selección.</p></div></div></div>
+<div class="note">El perceptrón maximiza la detección (recall), pero confunde demasiados vinos normales con Selección. El MLP prioriza una predicción positiva más fiable.</div>
+</section>
+
+<section id="s6">
+<div class="eyebrow">06 · Impacto económico anual</div><h2>El coste de equivocarse<br>cambia la decisión.</h2>
+<p class="sub">Los recuentos del test se escalan por 5 para estimar 1.600 lotes anuales. Son estimaciones orientativas basadas en los costes indicados por el cliente.</p>
+<div class="tablewrap"><table><thead><tr><th>Modelo</th><th>FP/año</th><th>FN/año</th><th>Coste FP</th><th>Coste FN</th><th>Coste total</th></tr></thead><tbody>
+<tr><td>Neurona M-P</td><td>10</td><td>205</td><td>25.000 €</td><td>246.000 €</td><td>271.000 €</td></tr>
+<tr><td>Perceptrón</td><td>280</td><td>50</td><td>700.000 €</td><td>60.000 €</td><td>760.000 €</td></tr>
+<tr class="best"><td>Perceptrón multicapa</td><td>20</td><td>135</td><td>50.000 €</td><td>162.000 €</td><td>212.000 €</td></tr>
+</tbody></table></div>
+<div class="grid three">
+<div class="card"><p>Coste estimado M-P</p><div class="metric">271.000 €</div></div>
+<div class="card"><p>Coste estimado Perceptrón</p><div class="metric red">760.000 €</div></div>
+<div class="card"><p>Coste estimado MLP</p><div class="metric green">212.000 €</div><span class="tag">Menor coste estimado</span></div>
+</div>
+<div class="note">En esta evaluación, el MLP reduce el coste de errores estimado en 59.000 € frente a M-P y en 548.000 € frente al perceptrón. No es un beneficio neto: no descuenta implantación, mantenimiento ni validación en la bodega.</div>
+</section>
+
+<section id="s7">
+<div class="eyebrow">07 · Explora los supuestos</div><h2>¿Y si cambia el coste<br>de cada error?</h2>
+<p class="sub">Ajusta los supuestos del cliente y observa cómo cambia el coste estimado anual de cada modelo. El número de FP y FN procede del notebook.</p>
+<div class="card calc">
+<div><label for="fp">Coste por falso positivo: <output id="fpval">2.500 €</output></label><input id="fp" type="range" min="500" max="5000" step="100" value="2500"><label for="fn">Coste por falso negativo: <output id="fnval">1.200 €</output></label><input id="fn" type="range" min="200" max="3000" step="100" value="1200"><label for="lots">Lotes anuales: <output id="lotsval">1.600</output></label><input id="lots" type="range" min="500" max="4000" step="100" value="1600"></div>
+<div><div id="calcResults"></div><p class="source">Escalado lineal de FP y FN observados en el test. Esta calculadora cambia supuestos, no vuelve a entrenar los modelos.</p></div>
+</div>
+</section>
+
+<section id="s8">
+<div class="eyebrow">08 · Recomendación</div><h2>Un filtro inteligente.<br>No un sustituto del catador.</h2>
+<p class="sub">Con los resultados actuales, recomendamos continuar con un piloto supervisado del perceptrón multicapa.</p>
+<div class="grid two">
+<div class="card"><span class="tag">Recomendación</span><h3>Probar el MLP en piloto</h3><div class="metric green">212.000 €</div><p>Es el menor coste estimado de errores de los tres modelos evaluados.</p><p>Su precisión del 80 % reduce el riesgo de etiquetar vinos mediocres como Selección.</p></div>
+<div class="card"><span class="tag warn">Condición esencial</span><h3>Supervisión humana</h3><p>El MLP deja sin detectar 135 vinos Selección estimados al año. No debe automatizar por sí solo la decisión definitiva.</p><p>Los lotes dudosos o de alto impacto deben seguir pasando por el panel.</p></div>
+</div>
+<h3 style="margin-top:28px">Cómo encajaría en el día a día</h3>
+<div class="grid three">
+<div class="card"><div class="metric">01</div><h3>Laboratorio</h3><p>Se reciben las 11 medidas del lote.</p></div>
+<div class="card"><div class="metric">02</div><h3>Modelo</h3><p>Calcula una predicción y una señal de riesgo.</p></div>
+<div class="card"><div class="metric">03</div><h3>Panel de cata</h3><p>Revisa los casos dudosos y valida decisiones sensibles.</p></div>
+</div>
+</section>
+
+<section id="s9">
+<div class="eyebrow">09 · Riesgos, límites y próximos pasos</div><h2>Antes de implantar,<br>hay que validar.</h2>
+<div class="grid two">
+<div class="card"><h3>Datos de otra procedencia</h3><p>Wine Quality no procede del Celler del Túria.</p><p><b>Control:</b> recopilar datos históricos propios y validar con una nueva cosecha.</p></div>
+<div class="card"><h3>Cambios entre cosechas</h3><p>Las características de los vinos pueden variar.</p><p><b>Control:</b> monitorizar métricas y reentrenar cuando sea necesario.</p></div>
+<div class="card"><h3>Falsos negativos</h3><p>El MLP no detecta todos los vinos de calidad alta.</p><p><b>Control:</b> mantener revisión humana para lotes dudosos y muestreo.</p></div>
+<div class="card"><h3>Costes no incluidos</h3><p>La estimación solo cuantifica los errores de clasificación.</p><p><b>Control:</b> presupuestar integración, horas técnicas, mantenimiento y validación.</p></div>
+</div>
+<div class="note"><b>Precaución metodológica:</b> el notebook ajusta el umbral de la neurona M-P para minimizar el coste en entrenamiento, mientras que el perceptrón y el MLP usan su umbral de decisión predeterminado. Antes de una decisión definitiva conviene calibrar los umbrales de los tres modelos con el mismo procedimiento y comparar de nuevo.</div>
+</section>
+
+<section id="s10">
+<div class="eyebrow">10 · Cierre</div><h2>La tecnología acelera.<br>El criterio experto protege.</h2>
+<p class="lead">Los datos permiten priorizar lotes y reducir esperas, pero el despliegue debe ser gradual, medido y supervisado.</p>
+<div class="grid three">
+<div class="card"><div class="metric">90,3%</div><p>accuracy del MLP en el test</p></div>
+<div class="card"><div class="metric">80%</div><p>precisión para la clase Selección</p></div>
+<div class="card"><div class="metric green">212.000 €</div><p>coste anual estimado de errores, el menor de los tres</p></div>
+</div>
+<p class="source" style="margin-top:30px">Fuente de datos: Cortez, P., Cerdeira, A., Almeida, F., Matos, T. y Reis, J. (2009). Wine Quality. UCI Machine Learning Repository. DOI: 10.24432/C56S3T. Licencia CC BY 4.0.</p>
+<p class="footer">Proyecto Cata Digital · UD2 · Programación en Inteligencia Artificial · IES Abastos</p>
+</section>
+
+<div class="controls"><button class="navbtn" id="prev">← Anterior</button><span class="kbd" id="counter">1 / 11</span><button class="navbtn primary" id="next">Siguiente →</button></div>
+</main>
+<script>
+const sections=[...document.querySelectorAll('main section')], dots=document.getElementById('dots');
+sections.forEach((s,i)=>{const a=document.createElement('a');a.href='#'+s.id;a.title='Ir a sección '+(i+1);dots.appendChild(a)});
+const links=[...dots.children];let current=0;
+function go(i){current=Math.max(0,Math.min(sections.length-1,i));sections[current].scrollIntoView({behavior:'smooth'});update()}
+function update(){const y=window.scrollY+window.innerHeight*.42;let idx=0;sections.forEach((s,i)=>{if(s.offsetTop<=y)idx=i});current=idx;links.forEach((a,i)=>a.classList.toggle('active',i===idx));document.getElementById('counter').textContent=(idx+1)+' / '+sections.length;document.getElementById('progress').style.width=((idx+1)/sections.length*100)+'%';document.getElementById('prev').disabled=idx===0;document.getElementById('next').textContent=idx===sections.length-1?'Volver arriba ↑':'Siguiente →'}
+window.addEventListener('scroll',update);document.getElementById('prev').onclick=()=>go(current-1);document.getElementById('next').onclick=()=>go(current===sections.length-1?0:current+1);document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(current+1);if(e.key==='ArrowLeft')go(current-1)});
+document.querySelectorAll('#matrixTabs button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#matrixTabs button').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.detail').forEach(x=>x.classList.toggle('active',x.id===b.dataset.target))});
+const fp=document.getElementById('fp'),fn=document.getElementById('fn'),lots=document.getElementById('lots');
+const euro=n=>Math.round(n).toLocaleString('es-ES')+' €';
+function calc(){let f=+fp.value,n=+fn.value,l=+lots.value;document.getElementById('fpval').textContent=euro(f);document.getElementById('fnval').textContent=euro(n);document.getElementById('lotsval').textContent=l.toLocaleString('es-ES');let rows=[['Neurona M-P',10,205],['Perceptrón',280,50],['MLP',20,135]].map(([name,a,b])=>({name,cost:(a*f+b*n)*l/1600})).sort((a,b)=>a.cost-b.cost);document.getElementById('calcResults').innerHTML=rows.map((r,i)=>`<div style="margin:13px 0"><div style="display:flex;justify-content:space-between;gap:10px"><b>${r.name}</b><strong style="color:${i===0?'var(--green)':'var(--text)'}">${euro(r.cost)}</strong></div><div class="bar"><i class="${i===0?'green':''}" style="width:${Math.max(2,r.cost/Math.max(...rows.map(x=>x.cost))*100)}%"></i></div></div>`).join('')+'<span class="tag">Menor coste: '+rows[0].name+'</span>'}
+[fp,fn,lots].forEach(x=>x.addEventListener('input',calc));calc();update();
+</script>
+</body></html>
